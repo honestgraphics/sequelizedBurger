@@ -2,11 +2,15 @@ var bodyParser = require("body-parser");
 var express = require("express");
 var methodOverride = require("method-override");
 require('dotenv').config();
+var mysql2 = require("mysql2");
 
 var PORT = process.env.PORT || 8080;
 console.log("listening on 8080")
 
 var app = express();
+
+//added to definen db
+var db = require("./models/index.js");
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
