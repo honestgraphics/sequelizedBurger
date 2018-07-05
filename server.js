@@ -2,7 +2,6 @@ var bodyParser = require("body-parser");
 var express = require("express");
 var methodOverride = require("method-override");
 require('dotenv').config();
-var mysql2 = require("mysql2");
 
 var PORT = process.env.PORT || 8080;
 console.log("listening on 8080")
@@ -25,7 +24,7 @@ app.use(bodyParser.json());
 app.use(methodOverride("_method"));
 
 // allows our app to use a public folder
-app.use(express.static(__dirname + '/app/public'));
+app.use(express.static(__dirname + '/public'));
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
